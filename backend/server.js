@@ -4,6 +4,11 @@ const http = require('http').createServer(server);
 
 const bodyParser = require('body-parser');
 server.use(bodyParser.json());
+const cookieParser = require('cookie-parser');
+server.use(cookieParser());
+
+const auth = require('./middlewear/auth.js');
+server.use(auth);
 
 const app = require('./app/router.js');
 server.use('/?', app);
