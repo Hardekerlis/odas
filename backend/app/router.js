@@ -1,8 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  console.log(123);
+router.get('/health', (req, res) => {
+  res.status(200).send();
 });
+
+const categories = require('./categories/router.js');
+router.use('/items/?', categories);
 
 module.exports = router;

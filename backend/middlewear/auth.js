@@ -6,13 +6,12 @@ const yubico = {
 
 module.exports = (req, res, next) => {
   const token = req.cookies.token;
-  const url = req.url;
+  const url = req.url.toLowerCase();
 
-  if(url.startsWith('/op')) {
+  if(url.startsWith('/op')) { // Op stands for operator
     // -- Add authentication for token here --
-
-    if(true) next();
-
+    console.log('This is operator call');
+    next();
 
   }else next();
 }

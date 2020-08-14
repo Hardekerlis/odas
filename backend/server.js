@@ -2,6 +2,8 @@ const express = require('express');
 const server = express();
 const http = require('http').createServer(server);
 
+require('./database/mongoose.js');
+
 const bodyParser = require('body-parser');
 server.use(bodyParser.json());
 const cookieParser = require('cookie-parser');
