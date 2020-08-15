@@ -10,7 +10,7 @@ module.exports = (req, res, next) => {
 
   if(url.startsWith('/op')) { // Op stands for operator
     // -- Add authentication for token here --
-    console.log('This is operator call');
+    console.log('*This is operator call*');
     next();
 
   }else next();

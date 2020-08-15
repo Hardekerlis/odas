@@ -4,6 +4,9 @@ const http = require('http').createServer(server);
 
 require('./database/mongoose.js');
 
+const cors = require('cors');
+server.use(cors());
+
 const bodyParser = require('body-parser');
 server.use(bodyParser.json());
 const cookieParser = require('cookie-parser');
