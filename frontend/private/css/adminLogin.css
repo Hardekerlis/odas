@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.loginContainer {
+  width: 400px;
+}
+
+.loginContainer form input,  .loginContainer form button {
+  display: block;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 5px;
+}
