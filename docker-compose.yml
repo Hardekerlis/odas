@@ -1,14 +1,10 @@
 version: '3'
 services:
-  redis:
-    image: "redis:latest"
   frontend:
     build:
       context: ./frontend
     volumes:
       - ./frontend:/usr/share/nginx/html
-    ports:
-      - "3001:80"
   api:
     build:
       context: ./backend
@@ -23,5 +19,10 @@ services:
       - PGDATABASE=postgres
       - PGPASSWORD=postgres_password
       - PGPORT=5432
+  nginx:
+    restart: always
+    build:
+      context: ./nginx
     ports:
+      - "3001:3001"
       - "3000:3000"
